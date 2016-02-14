@@ -1,0 +1,161 @@
+swagger: "2.0"
+info:
+  version: "0.1.0"
+  title: Openracer race timing
+# basePath prefixes all resource paths
+basePath: /api
+#
+schemes:
+  # tip: remove http to make production-grade
+  - http
+  - https
+# format of bodies a client can send (Content-Type)
+consumes:
+  - application/json
+# format of the responses to the client (Accepts)
+produces:
+  - application/json
+paths:
+  /events:
+    x-swagger-router-controller: EventController
+    get:
+      operationId: EventList
+      responses:
+        "200":
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Event'
+        default:
+          description: Error
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+    post:
+      operationId: EventCreate
+      parameters:
+        - name: event
+          schema:
+            $ref: '#/definitions/Event'
+          in: body
+          required: true
+      responses:
+        "200":
+          description: Success
+          schema:
+            $ref: '#/definitions/Event'
+        default:
+          description: Error
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+  /events/{id}:
+    x-swagger-router-controller: EventController
+    get:
+      operationId: EventGet
+      parameters:
+        - name: id
+          type: integer
+          in: path
+          required: true
+      responses:
+        "200":
+          description: Success
+          schema:
+            $ref: '#/definitions/Event'
+        default:
+          description: Error
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+  /swagger:
+    x-swagger-pipe: swagger_raw
+# complex objects have schema definitions
+definitions:
+  Event:
+    required:
+      - name
+      - date
+      - location
+    properties:
+      name:
+        type: string
+      location:
+        type: string
+      date:
+        type: string
+        format: date
+      drivers:
+        type: array
+        items:
+          $ref: '#/definitions/Driver'
+  Driver:
+    required:
+      - name
+      - address
+      - emergencyName
+      - emergencyPhone
+    properties:
+      name:
+        type: string
+      address:
+        type: string
+      sccaMember:
+        type: integer
+      emergencyName:
+        type: string
+      emergencyPhone:
+        type: string
+      novice:
+        type: boolean
+      primaryCar:
+        $ref: '#/definitions/Car'
+      primaryNumber:
+        $ref: '#/definitions/Number'
+      cars:
+        type: array
+        items:
+          $ref: '#/definitions/Car'
+  Car:
+    required:
+      - make
+      - model
+      - year
+      - class
+    properties:
+      make:
+        type: string
+      model:
+        type: string
+      year:
+        type: integer
+      class:
+        $ref: '#/definitions/Class'
+      drivers:
+        type: array
+        items:
+          $ref: '#/definitions/Driver'
+  Class:
+    required:
+      - name
+    properties:
+      name:
+        type: string
+      abbr:
+        type: string
+        maxLength: 4
+      parent:
+        $ref: '#/definitions/Class'
+  Number:
+    required:
+      - number
+    properties:
+      number:
+        type: integer
+        minimum: 1
+      driver:
+        $ref: '#/definitions/Driver'
+  ErrorResponse:
+    required:
+      - message
+    properties:
+      message:
+        type: string

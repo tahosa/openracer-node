@@ -1,0 +1,44 @@
+<div>
+    <h1>{{event.name}}: Drivers</h1>
+    <div class="col-lg-3 col-md-3 col-xs-12">
+        <div class="row">
+            <input type="text" class="form-control col-xs-12" ng-model="driverFilter" placeholder="Filter Drivers" />
+        </div>
+        <div>
+            <div ng-repeat="driver in drivers | filter:{$: driverFilter}" class="col-xs-12 row hover link clearfix" ng-click="setActive(driver)">
+                <span class="col-xs-4 text-center">{{driver.number.number}}</span><span class="col-xs-8">{{driver.driver.name}}</span>
+                <i class="glyphicon glyphicon-pencil pull-right hover hover-right" ng-click="edit(driver)"></i>
+            </div>
+        </div>
+        <div class="pull-right">
+            <button class="btn btn-default" ng-click="findDriver()">Search</button>
+            <button class="btn btn-default" ng-click="newDriver()">New</button>
+        </div>
+    </div>
+    <div class="col-lg-9 col-md-9 col-xs-12" ng-show="active">
+        <h2>{{active.driver.name}} <small class="text-danger" ng-show="active.driver.novice">Novice</small><button class="btn btn-default btn-lg hidden" ng-click="edit(active)" ng-hide="editing"><i class="glyphicon glyphicon-pencil"></i></button></h2>
+        <div ng-hide="editing">
+            <h3>Car Number</h3>
+            {{active.number.number}}
+            <h3>SCCA Member Number</h3>
+            {{active.driver.scca_number || 'Not an SCCA member'}}
+            <h3>Address</h3>
+            {{active.driver.address}}
+            <h3>Emergency Contact</h3>
+            {{active.driver.emergency_name}} - {{active.driver.emergency_phone}}
+
+            <h3>Car</h3>
+            {{active.car.year}} {{active.car.make}} {{active.car.model}} - {{active.car.car_class.abbr || active.car.car_class.name}}
+        </div>
+        <div class="form-horizontal" ng-show="editing">
+            <div class="input-group">
+                <label for="name" class="control-label">Name</label>
+                <input type="text" name="name" class="form-control" ng-model="editing.driver.name" />
+            </div>
+            <div class="clearfix">
+                <button class="btn btn-success pull-right" ng-click="save()">Save</button>
+                <button class="btn btn-danger pull-right space-sides" ng-click="cancel()">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>

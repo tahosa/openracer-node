@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app='openracer'>
+  <head>
+    <base href=""/>
+    <title>Openracer</title>
+
+    <!-- Viewport mobile tag for sensible mobile support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!--STYLES-->
+    <link rel="stylesheet" href="/dependencies/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles/importer.css">
+    <!--STYLES END-->
+  </head>
+
+  <body class="container full-height">
+      <%- body %>
+
+    <!--TEMPLATES-->
+    <script type="text/javascript" src="/jst.js"></script>
+    <!--TEMPLATES END-->
+
+    <!--SCRIPTS-->
+    <script src="/dependencies/jquery/dist/jquery.min.js"></script>
+    <script src="/dependencies/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/dependencies/angular/angular.min.js"></script>
+    <script src="/dependencies/angular-animate/angular-animate.min.js"></script>
+    <script src="/dependencies/angular-resource/angular-resource.min.js"></script>
+    <script src="/dependencies/angular-route/angular-route.min.js"></script>
+    <script src="/dependencies/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="/dependencies/angular-strap/dist/angular-strap.min.js"></script>
+    <script src="/dependencies/angular-strap/dist/angular-strap.tpl.min.js"></script>
+    <script src="/app/drivers/drivers.module.js"></script>
+    <script src="/app/events/drivers/drivers.module.js"></script>
+    <script src="/app/events/events.module.js"></script>
+    <script src="/app/events/manager/manager.module.js"></script>
+    <script src="/app/events/runs/runs.module.js"></script>
+    <script src="/app/events/standings/standings.module.js"></script>
+    <script src="/app/openracer.module.js"></script>
+    <script src="/app/settings/settings.module.js"></script>
+    <script src="/app/controllers.js"></script>
+    <script src="/app/drivers/drivers.services.js"></script>
+    <script src="/app/events/events.js"></script>
+    <script src="/app/events/events.services.js"></script>
+    <script src="/app/events/manager/manager.services.js"></script>
+    <script src="/app/events/manager/new.js"></script>
+    <script src="/app/openracer.js"></script>
+    <script src="/app/openracer.services.js"></script>
+    <script src="/app/settings/settings.services.js"></script>
+    <!--SCRIPTS END-->
+  </body>
+</html>

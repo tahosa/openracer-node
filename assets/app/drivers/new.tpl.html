@@ -1,0 +1,11 @@
+<div bs-tabs bs-active-pane="tabs.activeTab">
+    <div ng-repeat="tab in tabs|orderBy:order" title="{{tab.title}}" ng-include="tab.template" bs-pane>
+    </div>
+</div>
+
+<div class="space-top clearfix">
+    <button class="btn btn-success pull-right" ng-click="nextTab()" ng-hide="tabs.activeTab == 2">Next</button>
+    <button class="btn btn-success pull-right" ng-click="save()" ng-show="tabs.activeTab == 2">Save</button>
+    <button class="btn btn-primary space-right pull-right" ng-click="prevTab()" ng-show="tabs.activeTab > 0">Back</button>
+    <button class="btn btn-danger pull-right space-right" ng-click="cancel()">Cancel</button>
+</div>

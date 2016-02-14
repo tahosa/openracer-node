@@ -1,0 +1,16 @@
+<div class="input-group col-xs-12">
+    <label for="name" class="control-label">Name</label>
+    <input class="form-control" type="text" name="name" ng-model="event.event.data.name" />
+</div>
+<div class="input-group col-xs-12">
+    <label for="location" class="control-label">Location</label>
+    <input class="form-control" type="text" name="location" ng-model="event.event.data.location" />
+</div>
+<div class="input-group col-xs-12">
+    <label for="date" class="control-label">Date</label>
+    <input class="form-control" bs-datepicker type="text" name="date" ng-model="event.event.data.date" data-date-format="yyyy-MM-dd" data-date-type="string" data-autoclose="1" />
+</div>
+<div class="space-top clearfix">
+    <button class="btn btn-success pull-right" ng-click="event.event.save()">Save</button>
+    <button class="btn btn-danger pull-right space-sides" ng-click="event.event.cancel()">Cancel</button>
+</div>

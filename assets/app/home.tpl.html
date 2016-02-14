@@ -1,0 +1,23 @@
+<div class="jumbotron">
+    <h1>
+        OpenRacer
+    </h1>
+    <div>
+      <a class="btn btn-default" href="/settings"><i class="glyphicon glyphicon-cog"></i> Site settings</a>
+    </div>
+</div>
+<div class="event-select-wrapper center-block row col-xs-6 no-float clearfix space-top">
+    <h2 class="text-center">Choose an Event</h2>
+    <div class="btn-group col-xs-12">
+        <select class="event-select btn btn-default input-lg col-xs-11" ng-options="event.id as event.name for event in events" ng-model="idx.selectedEvent"></select>
+        <button class="btn btn-default input-lg col-xs-1" ng-click="idx.newEvent.show()"><i class="glyphicon glyphicon-plus"></i></button>
+    </div>
+</div>
+<div class="event-actions-wrapper center-block col-xs-6 no-float clearfix space-top" ng-show="idx.selectedEvent">
+    <div class="col-xs-12">
+        <button class="btn btn-default btn-lg col-xs-3" ng-click="idx.views.events(idx.selectedEvent)"><h1><i class="glyphicon glyphicon-road"></i></h1>Runs</button>
+        <button class="btn btn-default btn-lg col-xs-3" ng-click="idx.views.standings(idx.selectedEvent)"><h1><i class="glyphicon glyphicon-stats"></i></h1>Standings</button>
+        <button class="btn btn-default btn-lg col-xs-3" ng-click="idx.views.events(idx.selectedEvent, true)"><h1><i class="glyphicon glyphicon-user"></i></h1>Drivers</button>
+        <button class="btn btn-default btn-lg col-xs-3" ng-click="idx.views.manage(idx.selectedEvent)"><h1><i class="glyphicon glyphicon-wrench"></i></h1>Manage</button>
+    </div>
+</div>

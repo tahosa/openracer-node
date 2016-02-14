@@ -1,0 +1,33 @@
+<h3>Cars</h3>
+<div class="input-group col-xs-12">
+    <label for="cars" class="control-label">Current Cars</label>
+    <div>
+        <span ng-repeat="car in cars">
+            <button class="btn btn-default space-right" name="cars" ng-click="editCar(car)" ng-class="{'btn-primary': car.default}" >{{car.year}} {{car.make}} {{car.model}}</button>
+            <a ng-click="deleteCar(car)"><i class="glyphicon glyphicon-remove"></i></a>
+        </span>
+    </div>
+</div>
+<div class="input-group col-xs-12">
+    <label for="make" class="control-label">Make</label>
+    <input class="form-control" type="text" name="make" ng-model="currentCar.make" />
+</div>
+<div class="input-group col-xs-12">
+    <label for="model" class="control-label">Model</label>
+    <input class="form-control" type="text" name="model" ng-model="currentCar.model" />
+</div>
+<div class="input-group col-xs-12">
+    <label for="year" class="control-label">Year</label>
+    <input class="form-control" type="text" name="year" ng-model="currentCar.year" />
+</div>
+<div class="input-group col-xs-12">
+    <label for="class" class="control-label">Class</label>
+    <select class="form-control" type="text" name="class" ng-model="currentCar.car_class" ng-options="class.id as class.name for class in classes" />
+</div>
+<div class="input-group">
+    <label for="default" class="control-label">Default</label>
+    <input type="checkbox" class="form-control" name="default" ng-model="currentCar.default" />
+</div>
+<div class="">
+    <button class="btn btn-primary" ng-click="addCar()">Add Another</button>
+</div>

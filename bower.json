@@ -1,0 +1,35 @@
+{
+  "name": "openracer-node",
+  "description": "Open-source race timing and control",
+  "main": "app.js",
+  "authors": [
+    "Randall Crock <rlcrock@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "race conrol",
+    "timing",
+    "scoring"
+  ],
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "assets/js/dependencies",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.0",
+    "angular": "^1.5.0",
+    "angular-strap": "^2.3.7",
+    "angular-ui-router": "^0.2.18",
+    "bootstrap": "^3.3.6",
+    "angular-resource": "^1.5.0",
+    "angular-animate": "^1.5.0",
+    "angular-route": "^1.5.0",
+    "angular-sanitize": "^1.5.0"
+  }
+}

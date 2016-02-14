@@ -1,0 +1,80 @@
+body {
+    position: abosolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.full-height {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+}
+
+.anchor-bottom {
+    position: absolute;
+    bottom: 0;
+}
+
+.no-float {
+    float: none;
+}
+
+.settings {
+    position: fixed;
+    top: 1em;
+    right: 1em;
+}
+
+.space-top {
+    margin-top: 0.5em;
+}
+
+.space-left {
+    margin-left: 0.5em;
+}
+
+.space-right {
+    margin-right: 0.5em;
+}
+
+.space-bottom {
+    margin-bottom: 0.5em;
+}
+
+.space-sides {
+    margin: 0 0.5em;
+}
+
+.hover-right {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    display: none;
+}
+
+.hover-inline {
+    display:none;
+}
+
+.hover {
+    :hover {
+        > .hover-right,
+        > .hover-inline {
+            display: block;
+        }
+    }
+
+    .link {
+        cursor: pointer;
+    }
+}
+
+div.hover:hover {
+    background: #DDD;
+}
+
+i.hover:hover {
+    color: #337ab7;
+}

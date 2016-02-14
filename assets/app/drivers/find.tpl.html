@@ -1,0 +1,9 @@
+<div class="row">
+    <input type="text" class="form-control col-xs-12" ng-model="driverFilter" placeholder="Filter Drivers" />
+</div>
+<div class="clearfix">
+    <div ng-repeat="driver in drivers | filter:{$: driverFilter}" class="col-xs-12 row hover link clearfix">
+        <span class="col-xs-4 text-center">{{driver.number}}</span><span class="col-xs-8">{{driver.name}}</span>
+        <a ng-click="add(driver)" class="pull-right hover hover-right">Add <i class="glyphicon glyphicon-plus"></i></a>
+    </div>
+</div>

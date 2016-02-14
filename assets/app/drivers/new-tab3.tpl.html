@@ -1,0 +1,23 @@
+<h3>Review New Driver</h3>
+<div>
+    <strong>Name:</strong> {{driver.name}}
+</div>
+<div>
+    <strong>Address:</strong> {{driver.address}}
+</div>
+<div>
+    <strong>SCCA Member Number:</strong> {{driver.scca_number}}
+</div>
+<div>
+    <strong>Car Number:</strong> {{driver.name}}
+</div>
+<div>
+    <strong>Emergency Contact Name:</strong> {{driver.emergency_name}}
+</div>
+<div>
+    <strong>Emergency Contact Phone:</strong> {{driver.emergency_phone}}
+</div>
+<div>
+    <strong>Cars:</strong><br/>
+    <button ng-repeat="car in cars" class="btn btn-default space-right" ng-class="{ 'btn-primary': car.default }">{{car.year}} {{car.make}} {{car.model}}</button>
+</div>
