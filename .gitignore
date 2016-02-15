@@ -20,6 +20,9 @@ coverage
 .grunt
 .tmp
 
+# Intermediate build files
+assets/styles/importer.css
+
 # Compiled binary addons (http://nodejs.org/api/addons.html)
 build/Release
 
